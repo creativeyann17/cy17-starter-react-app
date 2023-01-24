@@ -1,12 +1,20 @@
 # cy17-react-app-starter
 
-Contains the foundation of a react-app repository.
+Contains the foundation of a react-app repository + commonly used libraries to be like a framework of some sort.
+
+## Libraries
+
+- Rooting `react-router-dom`
+
+## Actions
+
+- `ci.yml` validate tests + dockerfile
 
 ## VSCode
 
 ### Extensions
 
-Bellow list of recommended extensions:
+List of recommended extensions:
 
 - Code Spell Checker
 - French - Code Spell Checker
@@ -18,6 +26,8 @@ Bellow list of recommended extensions:
 ### Format
 
 Auto-format will be performed by `husky` on every staged files and on save as defined in `.vscode/settings.json`.
+
+ESLint configuration can be changed with `npx eslint --init`.
 
 ### Tabs <=> spaces
 
