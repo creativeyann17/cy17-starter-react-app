@@ -1,7 +1,9 @@
 name: CI
+
 on:
   push:
     branches: [main, master]
+
 jobs:
   tests:
     runs-on: ubuntu-latest
@@ -11,7 +13,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-            node-version: 18
+          node-version: 18
       - name: Use Dependencies Cache
         uses: actions/cache@v3
         with:
@@ -21,4 +23,12 @@ jobs:
         run: npm install
       - name: Test
         run: npm run test
-    
+  dockerfile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build image
+        run: |
+          docker build -t test-image .
+          echo "Image built successfully"
