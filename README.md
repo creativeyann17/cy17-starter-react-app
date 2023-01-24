@@ -5,6 +5,7 @@ Contains the foundation of a react-app repository + commonly used libraries to b
 ## Libraries
 
 - Rooting `react-router-dom`
+- Meta-tags `react-helmet`
 
 ## Actions
 
