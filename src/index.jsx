@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Helmet } from 'react-helmet'
+import './i18n'
 import './index.css'
 import DefaultLayout from './layouts/DefaultLayout'
 import reportWebVitals from './reportWebVitals'
