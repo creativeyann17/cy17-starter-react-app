@@ -6,6 +6,9 @@ Contains the foundation of a react-app repository + commonly used libraries to b
 
 - Rooting `react-router-dom`
 - Meta-tags `react-helmet`
+- i18n `i18n-next`
+- utils `lodash`
+- REST `axios-hooks`
 
 ## Actions
 
