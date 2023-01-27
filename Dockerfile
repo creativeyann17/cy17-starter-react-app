@@ -8,4 +8,5 @@ RUN npm run build
 
 # run
 FROM nginx:stable-alpine AS run-image
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-image /app/build /usr/share/nginx/html

@@ -1,20 +1,11 @@
 import React from 'react'
-import axios from 'axios'
-import useAxios, { makeUseAxios } from 'axios-hooks'
+import { default as useCustomAxios } from '../apis/CustomAPI'
+import useAxios from 'axios-hooks'
 import { debug } from '../utils'
-
-//
-const useAxios1 = makeUseAxios({
-  axios: axios.create({
-    baseURL: 'https://reqres.in/api',
-    timeout: 10000,
-    headers: { 'my-header': 'foo' },
-  }),
-})
 
 const AxiosPage = () => {
   const [{ data, loading, error }, refetch] = useAxios('https://reqres.in/api/users?delay=2')
-  const [anotherCall, anotherCallRefetch] = useAxios1('/users?delay=1')
+  const [anotherCall, anotherCallRefetch] = useCustomAxios('/users?delay=1')
 
   debug('axios - default', data, loading, error)
   debug('axios - 1', anotherCall)

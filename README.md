@@ -2,6 +2,12 @@
 
 Contains the foundation of a react-app repository + commonly used libraries to be like a framework of some sort.
 
+## Docker-compose
+
+Start: `docker-compose up`
+
+Stop: `docker-compose down --rmi all`
+
 ## Libraries
 
 - Rooting `react-router-dom`
@@ -9,6 +15,13 @@ Contains the foundation of a react-app repository + commonly used libraries to b
 - i18n `i18n-next`
 - utils `lodash`
 - REST `axios-hooks`
+
+### Node
+
+The files should have the same node version:
+
+- `.nvmrc`
+- `Dockerfile`
 
 ## Actions
 
