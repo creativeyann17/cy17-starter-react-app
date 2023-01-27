@@ -6,6 +6,9 @@ import './index.css'
 import DefaultLayout from './layouts/DefaultLayout'
 import reportWebVitals from './reportWebVitals'
 
+// eslint-disable-next-line no-undef
+console.log('REACT_APP_FOO', process.env.REACT_APP_FOO)
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.Fragment>

@@ -1,8 +1,11 @@
 version: '3'
-services: 
+services:
   deployment-prod:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      REACT_APP_FOO: FOO
+
     ports:
-      - '3000:80'
+      - '80:80'
