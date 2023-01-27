@@ -2,12 +2,6 @@
 
 Contains the foundation of a react-app repository + commonly used libraries to be like a framework of some sort.
 
-## Docker-compose
-
-Start: `docker-compose up`
-
-Stop: `docker-compose down --rmi all`
-
 ## Libraries
 
 - Rooting `react-router-dom`
