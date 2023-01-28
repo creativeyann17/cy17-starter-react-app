@@ -1,10 +1,8 @@
 name: Publish to Docker Hub
 
 on:
-  workflow_run:
-    workflows: [CI Tests Docker build]
-    types:
-      - completed
+  push:
+    branches: [main, master]
 
 jobs:
   docker-hub:
@@ -25,14 +23,14 @@ jobs:
           push: true
           build-args:
             ENV_FILE: .env.dev
-          tags: creativeyann17/cy17-starter-react-app:${{GITHUB_SHA}}
+          tags: creativeyann17/cy17-starter-react-app:${{env.GITHUB_SHA}}
   deploy-aws:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Update Dockerrun.aws.json
-        run: sed -i 's/__TAG__/${{GITHUB_SHA}}/g' Dockerrun.aws.json
+        run: sed -i 's/__TAG__/${{env.GITHUB_SHA}}/g' Dockerrun.aws.json
       - name: Package
         run: zip deploy.zip Dockerrun.aws.json
       - name: Deploy to AWS
@@ -42,6 +40,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: cy17-react-app-starter
           environment_name: Cy17reactappstarter-ecs
-          version_label: 'cy17-react-app-starter-${{GITHUB_SHA}}'
+          version_label: 'cy17-react-app-starter-${{env.GITHUB_SHA}}'
           region: us-east-1
           deployment_package: deploy.zip
