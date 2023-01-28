@@ -21,8 +21,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          build-args:
-            ENV_FILE: .env.dev
+          build-args: |
+            ENV_FILE=.env.dev
           tags: creativeyann17/cy17-starter-react-app:${{env.GITHUB_SHA}}
   deploy-aws:
     runs-on: ubuntu-latest
