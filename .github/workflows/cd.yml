@@ -1,4 +1,4 @@
-name: Deployment From Github To AWS
+name: CD
 
 on:
   workflow_run:
@@ -35,7 +35,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: cy17-react-app-starter
-          environment_name: Cy17reactappstarter-env
+          environment_name: Cy17reactappstarter-node
           version_label: 'cy17-react-app-starter-${{ steps.format-time.outputs.replaced }}'
           region: us-east-1
           deployment_package: deploy.zip
