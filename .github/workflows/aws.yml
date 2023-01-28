@@ -2,12 +2,12 @@ name: Deploy to AWS
 
 on:
   workflow_run:
-    workflows: ['Publish to Docker Hub']
+    workflows: [Publish to Docker Hub]
     types:
       - completed
 
 jobs:
-  deploy:
+  deploy-aws:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

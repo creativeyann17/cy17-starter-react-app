@@ -23,7 +23,7 @@ jobs:
         run: npm install
       - name: Test
         run: npm run test
-  dockerfile:
+  docker-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
