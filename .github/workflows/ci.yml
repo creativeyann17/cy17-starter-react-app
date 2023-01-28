@@ -1,4 +1,4 @@
-name: CI Tests + Docker build
+name: CI Tests Docker build
 
 on:
   push:
