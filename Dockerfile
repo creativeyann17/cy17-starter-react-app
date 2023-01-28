@@ -4,8 +4,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . . 
+COPY .env.production /app/.env
 RUN npm run build
-COPY .env /app
 
 # run
 FROM nginx:stable-alpine AS run-image

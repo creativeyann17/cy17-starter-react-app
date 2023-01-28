@@ -29,7 +29,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Set env file
-        run: mv env.production .env
+        run: mv .env.example .env
       - name: Build image
         run: |
           docker build -t test-image .
