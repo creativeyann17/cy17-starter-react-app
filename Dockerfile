@@ -1,10 +1,11 @@
 # build
-FROM node:16.16.0-alpine AS build-image
+FROM node:16.19.0-alpine AS build-image
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . . 
-COPY .env.production /app/.env
+ARG ENV_FILE
+COPY $ENV_FILE .env
 RUN npm run build
 
 # run

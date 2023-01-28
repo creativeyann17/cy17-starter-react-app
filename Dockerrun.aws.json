@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "cy17-starter-react-app",
-      "image": "creativeyann17/cy17-starter-react-app:latest",
+      "image": "creativeyann17/cy17-starter-react-app:__TAG__",
       "essential": true,
       "memory": 512,
       "portMappings": [

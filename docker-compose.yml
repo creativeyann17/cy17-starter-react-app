@@ -4,5 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        ENV_FILE: .env.dev
     ports:
       - '80:80'
