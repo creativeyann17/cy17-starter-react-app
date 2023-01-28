@@ -10,6 +10,8 @@ jobs:
   docker-hub:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env file
+        run: mv env.production .env
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx

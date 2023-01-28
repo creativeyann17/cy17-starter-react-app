@@ -4,8 +4,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
-      REACT_APP_FOO: FOO
-
     ports:
       - '80:80'
