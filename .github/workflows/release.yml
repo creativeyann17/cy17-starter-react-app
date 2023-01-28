@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Update Dockerrun.aws.json
-        run: sed -i 's/__TAG__/${{ github.event.release.tag_name }}/g' Dockerrun.aws.json
+        run: sed -i 's/__TAG__/${{ github.ref_name }}/g' Dockerrun.aws.json
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -28,7 +28,7 @@ jobs:
           push: true
           build-args: |
             ENV_FILE=.env.prod
-          tags: creativeyann17/cy17-starter-react-app:${{ github.event.release.tag_name }}
+          tags: creativeyann17/cy17-starter-react-app:${{ github.ref_name }}
       - name: Package
         run: zip deploy.zip Dockerrun.aws.json
       - name: Deploy to AWS
@@ -38,6 +38,6 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: cy17-react-app-starter
           environment_name: Cy17reactappstarter-prod
-          version_label: 'cy17-react-app-starter-${{ github.event.release.tag_name }}'
+          version_label: 'cy17-react-app-starter-${{ github.ref_name }}'
           region: us-east-1
           deployment_package: deploy.zip
