@@ -1,6 +1,12 @@
 # cy17-react-app-starter
 
-Contains the foundation of a react-app repository + commonly used libraries to be like a framework of some sort.
+Entire React App. starter that deploy on AWS Cloud with GitHubCI/CD and release actions for both dev/prod environments. Can be applied to anything that use a Dockerfile.
+
+Check both current deployments in AWS cloud here:
+
+DEV: https://react-dev.creativeyann17.com/
+
+PROD: https://react.creativeyann17.com/
 
 ## Deployment
 
@@ -88,3 +94,16 @@ Changes the following files **with consistency**:
 - `.vscode/settings.json` editor.tabSize/insertSpaces
 - `.eslintrc.js` rules.indent (2 or tab)
 - `.prettierrc` tabWidth should be the same as the others
+
+## AWS Cloud
+
+### Domain + DNS + Cert
+
+Do the following to have a custom domain + HTTPs + DNS redirection to sub-domains:
+
+- **route53** request a domain (cost money) and wait for validation.
+- **ACM** request a public certificate for that domain. Select DNS validation.
+- **route53** a new hosted zone should be created by **ACM** for that domain.
+- **EB** When cert is validated, add load-balancer rules for port 443 to use the certificate.
+- **route53** in the hosted zone add all the record you want from sub-domain url to the **EB** instance where the docker run.
+- **EC2** find the load-balancer, delete the listener 80 and create a new one to redirect 80 to 443
