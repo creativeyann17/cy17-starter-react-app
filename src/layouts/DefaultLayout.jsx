@@ -15,7 +15,7 @@ const DefaultLayout = () => {
           <Route exact path="/" element={<SimplePage />} />
           <Route path="/:id" element={<PageWithParam />} />
           <Route path="/axios" element={<AxiosPage />} />
-          <Route element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Router>

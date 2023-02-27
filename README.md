@@ -1,4 +1,4 @@
-# cy17-react-app-starter
+# cy17-starter-react-app
 
 Entire React App. starter that deploy on AWS Cloud with GitHubCI/CD and release actions for both dev/prod environments. Can be applied to anything that use a Dockerfile.
 
@@ -59,6 +59,7 @@ The files should have the same node version:
 
 - `.nvmrc`
 - `Dockerfile`
+- `ci.yml`
 
 ## Actions
 

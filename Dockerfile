@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . . 
-ARG ENV_FILE
+ARG ENV_FILE=.env.dev
 COPY $ENV_FILE .env
 RUN npm run build
 
