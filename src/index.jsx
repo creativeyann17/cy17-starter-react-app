@@ -5,6 +5,7 @@ import './i18n'
 import './index.css'
 import DefaultLayout from './layouts/DefaultLayout'
 import reportWebVitals from './reportWebVitals'
+import GlobalStateProvider from './state/GlobalStateProvider'
 
 // eslint-disable-next-line no-undef
 console.log('REACT_APP_FOO', process.env.REACT_APP_FOO)
@@ -21,7 +22,9 @@ root.render(
         content="Contains the foundation of a react-app repository + commonly used libraries to be like a framework of some sort."
       />
     </Helmet>
-    <DefaultLayout />
+    <GlobalStateProvider>
+      <DefaultLayout />
+    </GlobalStateProvider>
   </React.Fragment>
 )
 
